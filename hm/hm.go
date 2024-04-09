@@ -1,22 +1,15 @@
-package solution
+package main
 
-func MostPopularWord(words []string) string {
-	wordsCount := make(map[string]int, len(words))
-	mostPopWord := ""
-	max := 0
-	for _, word := range words {
-		wordsCount[word]++
-		if wordsCount[word] > max {
-			max = wordsCount[word]
-		}
-	}
+import (
+	"fmt"
+	"math"
+)
 
-	for _, word := range words {
-		if wordsCount[word] == max {
-			mostPopWord = word
-			break
-		}
-	}
-
-	return mostPopWord
+func main() {
+	var x1, y1, x2, y2 float64
+	fmt.Scan(&x1)
+	fmt.Scan(&y1)
+	fmt.Scan(&x2)
+	fmt.Scan(&y2)
+	fmt.Print(math.Sqrt(math.Pow(x1-x2, 2) + math.Pow(y1-y2, 2)))
 }
